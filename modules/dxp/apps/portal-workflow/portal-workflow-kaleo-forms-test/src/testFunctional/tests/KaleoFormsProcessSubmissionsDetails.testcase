@@ -109,11 +109,69 @@ definition {
 	}
 
 	@description = "Verify that the details page shows the version."
-	@ignore = "Test Stub"
 	@priority = "3"
 	test VersionOnDetailsPage {
 
-		// TODO LRQA-70701 VersionOnDetailsPage pending implementation
+		KaleoFormsAdmin.submitNewProcess(kfProcessName = "Kaleo Forms Process");
+
+		DDLRecord.populateFieldText(
+			ddlRecordFieldData = "Liferay",
+			fieldFieldLabel = "Company",
+			fieldName = "company");
+
+		DDLRecord.populateFieldText(
+			ddlRecordFieldData = "test@liferay.com",
+			fieldFieldLabel = "Email",
+			fieldName = "email");
+
+		DDLRecord.populateFieldText(
+			ddlRecordFieldData = "Test",
+			fieldFieldLabel = "First Name",
+			fieldName = "firstName");
+
+		DDLRecord.populateFieldSelect(
+			ddlRecordFieldData = "Google Hangouts",
+			fieldFieldLabel = "Instant Messenger Service",
+			fieldName = "imService");
+
+		DDLRecord.populateFieldText(
+			ddlRecordFieldData = "testliferay",
+			fieldFieldLabel = "Instant Messenger",
+			fieldName = "imUserName");
+
+		DDLRecord.populateFieldText(
+			ddlRecordFieldData = "QA Engineer",
+			fieldFieldLabel = "Job Title",
+			fieldName = "jobTitle");
+
+		DDLRecord.populateFieldText(
+			ddlRecordFieldData = "Test",
+			fieldFieldLabel = "Last Name",
+			fieldName = "lastName");
+
+		DDLRecord.populateFieldTextBox(
+			ddlRecordFieldData = "Notes",
+			fieldFieldLabel = "Notes",
+			fieldName = "notes");
+
+		DDLRecord.populateFieldText(
+			ddlRecordFieldData = "(123) 456-7890",
+			fieldFieldLabel = "Phone (Mobile)",
+			fieldName = "phoneMobile");
+
+		DDLRecord.populateFieldText(
+			ddlRecordFieldData = "(123) 111-2222",
+			fieldFieldLabel = "Phone (Office)",
+			fieldName = "phoneOffice");
+
+		KaleoFormsAdmin.saveProcessRecord();
+
+		LexiconEntry.gotoEllipsisMenuItem(menuItem = "View");
+
+		AssertElementPresent(
+			value1 = "1.0",
+			locator1 = "KaleoFormsAdmin#WORKFLOW_VERSION");
+
 
 	}
 

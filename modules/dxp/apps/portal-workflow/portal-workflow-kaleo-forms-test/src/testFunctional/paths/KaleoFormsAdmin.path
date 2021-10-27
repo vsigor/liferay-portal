@@ -26,6 +26,11 @@
 	<td>//div[contains(@class,'empty-result')]//div[contains(text(),'There are no unpublished definitions.')]</td>
 	<td></td>
 </tr>
+<tr>
+	<td>WORKFLOW_VERSION</td>
+	<td>//section[contains(@id,'KaleoFormsAdminPortlet')]//span[contains(@class,'workflow-version')]/span[contains(@class,'workflow-value')]</td>
+	<td></td>
+</tr>
 <!--WORKFLOW_MODAL-->
 <tr>
 	<td>CLOSE_BUTTON</td>
