@@ -111,7 +111,6 @@ definition {
 	@description = "Verify that the details page shows the version."
 	@priority = "3"
 	test VersionOnDetailsPage {
-
 		KaleoFormsAdmin.submitNewProcess(kfProcessName = "Kaleo Forms Process");
 
 		DDLRecord.populateFieldText(
@@ -169,10 +168,8 @@ definition {
 		LexiconEntry.gotoEllipsisMenuItem(menuItem = "View");
 
 		AssertElementPresent(
-			value1 = "1.0",
-			locator1 = "KaleoFormsAdmin#WORKFLOW_VERSION");
-
-
+			locator1 = "KaleoFormsAdmin#WORKFLOW_VERSION",
+			value1 = "1.0");
 	}
 
 }
